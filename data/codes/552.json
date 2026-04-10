@@ -12,27 +12,21 @@
           "response": "smtp;552 5.2.2 The email account that you tried to reach is over quota. Please direct the recipient to https://support.google.com/mail/?p=OverQuotaPerm - gsmtp",
           "severity": 0,
           "description": "",
-          "links": [
-            "https://support.google.com/mail/answer/81126"
-          ]
+          "links": ["https://support.google.com/mail/answer/81126"]
         },
         {
           "status": "5.2.3",
           "response": "SMTP; 552-5.2.3 Your message exceeded Google's message size limits. Please visit http://mail.google.com/support/bin/answer.py?answer=8770 to review our size guidelines.",
           "severity": 0,
           "description": "",
-          "links": [
-            "http://mail.google.com/support/bin/answer.py?answer=8770"
-          ]
+          "links": ["http://mail.google.com/support/bin/answer.py?answer=8770"]
         },
         {
           "status": "5.7.0",
           "response": "SMTP; 552-5.7.0 Our system detected an illegal attachment on your message. Please visit http://mail.google.com/support/bin/answer.py?answer=6590 to review our attachment guidelines.",
           "severity": 3,
           "description": "",
-          "links": [
-            "http://mail.google.com/support/bin/answer.py?answer=6590"
-          ]
+          "links": ["http://mail.google.com/support/bin/answer.py?answer=6590"]
         }
       ]
     },
@@ -65,19 +59,14 @@
           "response": "smtp;552 1 Requested mail action aborted, mailbox not found",
           "severity": 0,
           "description": "Treat this bounce as a 'bad-mailbox'. Experience has shown that the email address is invalid and should not be sent to in the future.",
-          "links": [
-            "https://postmaster.yahooinc.com/",
-            "https://postmaster.yahooinc.com/error-codes"
-          ]
+          "links": ["https://postmaster.yahooinc.com/","https://postmaster.yahooinc.com/error-codes"]
         },
         {
           "status": "5.2.2",
           "response": "smtp;552 5.2.2 This message could not be delivered because the recipient's mailbox is full. Please try again later or contact the recipient directly. See https://senders.yahooinc.com/smtp-error-codes#mailbox-full for more information",
           "severity": 0,
-          "description": "The recipient's Yahoo mailbox has exceeded its storage quota. This is a permanent delivery failure for this attempt \u2014 no retry will succeed until the recipient clears space.",
-          "links": [
-            "https://senders.yahooinc.com/smtp-error-codes#mailbox-full"
-          ]
+          "description": "The recipient's Yahoo mailbox has exceeded its storage quota. This is a permanent failure \u2014 retrying will not help until the recipient clears space. Consider suppressing the address if this error persists across multiple send attempts.",
+          "links": ["https://senders.yahooinc.com/smtp-error-codes#mailbox-full"]
         }
       ]
     },
@@ -90,9 +79,7 @@
           "response": "smtp;552 5.2.2 Mailbox size limit exceeded",
           "severity": 0,
           "description": "The recipient's mailbox is full. This usually happens because the recipient does not use their mailbox often and their mailbox is full.",
-          "links": [
-            "https://yandex.com/support/mail/bounces/yandex.html"
-          ]
+          "links": ["https://yandex.com/support/mail/bounces/yandex.html"]
         }
       ]
     },
@@ -105,9 +92,7 @@
           "response": "smtp;552 5.2.2 <example@icloud.com>: user is overquota",
           "severity": 0,
           "description": "",
-          "links": [
-            "https://support.apple.com/en-us/HT204137"
-          ]
+          "links": ["https://support.apple.com/en-us/HT204137"]
         }
       ]
     },
@@ -146,9 +131,7 @@
           "response": "smtp;552 5.1.1 <example@comcast.net> recipient rejected - extended quota violation",
           "severity": 0,
           "description": "",
-          "links": [
-            "http://postmaster.comcast.net/"
-          ]
+          "links": ["http://postmaster.comcast.net/"]
         }
       ]
     },
@@ -161,9 +144,7 @@
           "response": "smtp;552 Requested mail action aborted: exceeded storage allocation Quota exceeded.",
           "severity": 0,
           "description": "We were unable to deliver your email because the potential recipient does not have sufficient free space in their inbox. Please use a different method to contact the person in question and inform them of the situation.",
-          "links": [
-            "https://postmaster.gmx.net/en/error-messages"
-          ]
+          "links": ["https://postmaster.gmx.net/en/error-messages"]
         }
       ]
     }

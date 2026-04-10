@@ -12,9 +12,7 @@
           "response": "smtp;451 4.3.0 Mail server temporarily rejected message. - gsmtp",
           "severity": 0,
           "description": "",
-          "links": [
-            "https://support.google.com/mail/answer/81126"
-          ]
+          "links": ["https://support.google.com/mail/answer/81126"]
         }
       ]
     },
@@ -27,29 +25,21 @@
           "response": "smtp;451 example.yahoo.com Resources temporarily unavailable. Please try again later [#4.16.1].",
           "severity": 1,
           "description": "The sender's domain is currently unable to accept this message. Sending email in the future will most likely be successful.",
-          "links": [
-            "https://postmaster.yahooinc.com/",
-            "https://postmaster.yahooinc.com/error-codes"
-          ]
+          "links": ["https://postmaster.yahooinc.com/","https://postmaster.yahooinc.com/error-codes"]
         },
         {
           "status": "4.0.0-2",
           "response": "smtp;451 4.3.2 Internal server error",
           "severity": 0,
           "description": "",
-          "links": [
-            "https://postmaster.yahooinc.com/",
-            "https://postmaster.yahooinc.com/error-codes"
-          ]
+          "links": ["https://postmaster.yahooinc.com/","https://postmaster.yahooinc.com/error-codes"]
         },
         {
           "status": "4.0.0-3",
           "response": "smtp;451 Message temporarily deferred due to unresolvable RFC.5321 from domain. See https://senders.yahooinc.com/error-codes#unresolvable-from-domain",
           "severity": 1,
-          "description": "Yahoo has temporarily rejected the message because the envelope FROM domain (RFC 5321) cannot be resolved in DNS. Ensure the sending domain has valid MX or A records and that your MAIL FROM domain is correctly configured.",
-          "links": [
-            "https://senders.yahooinc.com/error-codes#unresolvable-from-domain"
-          ]
+          "description": "Yahoo is temporarily deferring the message because the envelope sender (MAIL FROM) domain cannot be resolved in DNS. Ensure the envelope sender domain has valid MX and A records. The suffix '-3' is a schema key convention; the actual SMTP enhanced status code is 4.0.0.",
+          "links": ["https://senders.yahooinc.com/error-codes#unresolvable-from-domain"]
         }
       ]
     },
@@ -116,9 +106,7 @@
           "response": "smtp;451 4.7.1 Service unavailable - try again later",
           "severity": 1,
           "description": "Messages are not being accepted right now. You may usually see this for sends happening at the \"top of the hour\" when many senders around the world are also sending aggressively to Apple.",
-          "links": [
-            "https://support.apple.com/en-us/HT204137"
-          ]
+          "links": ["https://support.apple.com/en-us/HT204137"]
         }
       ]
     },
