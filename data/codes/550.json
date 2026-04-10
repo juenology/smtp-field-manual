@@ -1,7 +1,7 @@
 {
   "reply": 550,
   "slug": "/550",
-  "description": "The transaction failed permanently. The server will not try to send the message again. This is used as a general error code, so there are many reasons why you could be seeing it.<br><br>It’s common for email service providers to add a status code (5.1.1) after the SMTP reply code (smtp;550) for additional categorization of the issue.",
+  "description": "The transaction failed permanently. The server will not try to send the message again. This is used as a general error code, so there are many reasons why you could be seeing it.<br><br>It\u2019s common for email service providers to add a status code (5.1.1) after the SMTP reply code (smtp;550) for additional categorization of the issue.",
   "providers": [
     {
       "id": "google",
@@ -12,14 +12,18 @@
           "response": "smtp;550 5.1.1 The email account that you tried to reach does not exist. Please try double-checking the recipient's email address for typos or unnecessary spaces. Learn more at https://support.google.com/mail/?p=NoSuchUser - gsmtp",
           "severity": 0,
           "description": "",
-          "links": ["https://support.google.com/mail/answer/188131"]
+          "links": [
+            "https://support.google.com/mail/answer/188131"
+          ]
         },
         {
           "status": "5.2.1",
           "response": "smtp;550 5.2.1 The email account that you tried to reach is disabled. Learn more at https://support.google.com/mail/?p=DisabledUser - gsmtp",
           "severity": 0,
           "description": "",
-          "links": ["https://support.google.com/mail/answer/81126"]
+          "links": [
+            "https://support.google.com/mail/answer/81126"
+          ]
         },
         {
           "status": "5.2.1-2",
@@ -36,28 +40,45 @@
           "response": "smtp;550 5.7.1 [x.xx.xx.xx] Our system has detected that this message is likely suspicious due to the very low reputation of the sending domain. To best protect our users from spam, the message has been blocked. Please visit https://support.google.com/mail/answer/188131 for more information. - gsmtp",
           "severity": 4,
           "description": "Gmail has determined that the sending domain has a low reputation, so messages are now permanently rejected. See Google's documentation on how to determine the source of this poor reputation and how to improve deliverability.",
-          "links": ["https://support.google.com/mail/answer/81126"]
+          "links": [
+            "https://support.google.com/mail/answer/81126"
+          ]
         },
         {
           "status": "5.7.1-2",
           "response": "smtp;550 5.7.1 [x.xx.xx.xx] Our system has detected that this message is likely unsolicited mail. To reduce the amount of spam sent to Gmail, this message has been blocked. Please visit https://support.google.com/mail/?p=UnsolicitedMessageError for more information. - gsmtp",
           "severity": 4,
           "description": "Gmail has determined your messages are unsolicited, so messages are now permanently rejected. See Google's documentation for best practices to monitor and investigate this. ",
-          "links": ["https://support.google.com/mail/?p=UnsolicitedRateLimitError"]
+          "links": [
+            "https://support.google.com/mail/?p=UnsolicitedRateLimitError"
+          ]
         },
         {
           "status": "5.7.1-3",
           "response": "smtp;550 5.7.1 Unauthenticated email from example.com is not accepted due to domain's DMARC policy. Please contact the administrator of example.com domain if this was a legitimate mail. Please visit https://support.google.com/mail/answer/2451690 to learn about the DMARC initiative. - gsmtp",
           "severity": 3,
           "description": "The sent message failed the DMARC policy for the sending domain. If the sending domain has a reject policy set for DMARC, the message must pass DKIM or have SPF aligned to the domain with a custom Return-Path. To resolve this, you'll need to contact your email service provider to see how to send a message that passes DMARC support.",
-          "links": ["https://support.google.com/mail/answer/81126"]
+          "links": [
+            "https://support.google.com/mail/answer/81126"
+          ]
         },
         {
           "status": "5.7.1-4",
           "response": "smtp;550 5.7.1 [x.xx.xx.xx 14] Messages missing a valid address in From: header, or having no From: header, are not accepted. - gsmtp",
           "severity": 0,
           "description": "In most cases this is the result of a malformatted From name or email address.",
-          "links": ["https://tools.ietf.org/html/rfc2822#appendix-A.6"]
+          "links": [
+            "https://tools.ietf.org/html/rfc2822#appendix-A.6"
+          ]
+        },
+        {
+          "status": "5.7.1-5",
+          "response": "smtp;550 5.7.1 The user or domain that you are sending to (or from) has a policy that prohibited the mail that you sent. Please contact your domain administrator for further details. For more information, go to https://support.google.com/a/answer/172179",
+          "severity": 2,
+          "description": "The recipient's Google Workspace administrator has configured a policy that is blocking this message. This is a domain-wide or per-user restriction enforced by the receiving organization's Google Workspace admin \u2014 not a reputation issue with the sender.",
+          "links": [
+            "https://support.google.com/a/answer/172179"
+          ]
         }
       ]
     },
@@ -70,7 +91,10 @@
           "response": "smtp;550 relaying denied for <example@example.com>",
           "severity": 0,
           "description": "",
-          "links": ["https://postmaster.yahooinc.com/","https://postmaster.yahooinc.com/error-codes"]
+          "links": [
+            "https://postmaster.yahooinc.com/",
+            "https://postmaster.yahooinc.com/error-codes"
+          ]
         }
       ]
     },
@@ -83,28 +107,36 @@
           "response": "smtp;550 5.1.1 <example@icloud.com>: user does not exist",
           "severity": 0,
           "description": "This mailbox does not exist at Apple. Check to make sure there are no typos with the address.",
-          "links": ["https://support.apple.com/en-us/HT204137"]
+          "links": [
+            "https://support.apple.com/en-us/HT204137"
+          ]
         },
         {
           "status": "5.7.1",
           "response": "smtp;550 5.7.1 [CS01] Message rejected due to local policy. Please visit https://support.apple.com/en-us/HT204137",
           "severity": 0,
           "description": "Apple Mail is blocking the email because of an email filter policy on their end. If you're unsure of the source of this issue, and following Apple's suggested best practices, you can contact Apple's postmaster team with mail logs for delivery support. ",
-          "links": ["https://support.apple.com/en-us/HT204137"]
+          "links": [
+            "https://support.apple.com/en-us/HT204137"
+          ]
         },
         {
           "status": "5.7.1-2",
-          "response": "smtp;550 5.7.1 Your message was rejected due to example.com’s DMARC policy. See https://support.apple.com/en-us/HT204137 for info",
+          "response": "smtp;550 5.7.1 Your message was rejected due to example.com\u2019s DMARC policy. See https://support.apple.com/en-us/HT204137 for info",
           "severity": 3,
           "description": "The sent message failed the DMARC policy for the sending domain. If the sending domain has a reject policy set for DMARC, the message must pass DKIM or have SPF aligned to the domain with a custom Return-Path. To resolve this, you'll need to contact your email service provider to see how to send a message that passes DMARC support. ",
-          "links": ["https://support.apple.com/en-us/HT204137"]
+          "links": [
+            "https://support.apple.com/en-us/HT204137"
+          ]
         },
         {
           "status": "5.7.1-3",
           "response": "smtp;550 5.7.1 Your email was rejected due to having a domain present in the Spamhaus DBL -- see https://www.spamhaus.org/dbl/",
           "severity": 4,
           "description": "Apple Mail checks all URLs in your message content against the public block list Spamhaus. Spamhaus is a very reputable block list with few false-positive listings. You must cooperate with Spamhaus volunteers to resolve the listing. Remember that even once the listing is removed, it may take receivers up to 24 hours to refresh their cache and to see delivery resume. ",
-          "links": ["https://www.spamhaus.org/lookup/"]
+          "links": [
+            "https://www.spamhaus.org/lookup/"
+          ]
         }
       ]
     },
@@ -117,14 +149,18 @@
           "response": "smtp;550 5.1.1 Not our Customer",
           "severity": 1,
           "description": "This mailbox does not exist at Comcast. Check to make sure there are no typos with the address.",
-          "links": ["http://postmaster.comcast.net/"]
+          "links": [
+            "http://postmaster.comcast.net/"
+          ]
         },
         {
           "status": "5.1.1-2",
           "response": "smtp;550 5.1.1 <example@comcast.net> recipient mailbox unallocated",
           "severity": 0,
           "description": "",
-          "links": ["http://postmaster.comcast.net/"]
+          "links": [
+            "http://postmaster.comcast.net/"
+          ]
         },
         {
           "status": "5.2.0",
@@ -138,7 +174,9 @@
           "response": "smtp;550 5.2.0 <example@comcast.net> - Recipient unavailable",
           "severity": 0,
           "description": "",
-          "links": ["http://postmaster.comcast.net/"]
+          "links": [
+            "http://postmaster.comcast.net/"
+          ]
         }
       ]
     },
@@ -158,14 +196,18 @@
           "response": "smtp;550 5.7.1 Service unavailable, MailFrom domain is listed in Spamhaus. To request removal from this list see https://www.spamhaus.org/query/lookup/ (S8002) [#.eop-nam02.prod.protection.outlook.com]",
           "severity": 4,
           "description": "The MailFrom domain is also known as the Return-Path header domain, and is used to validate SPF authentication (it's not always the same domain as your From address for the message). Outlook checks your MailFrom domain against the public block list Spamhaus. Spamhaus is a very reputable block list with few false-positive listings. You must cooperate with Spamhaus volunteers to resolve the listing. Remember that even once the listing is removed, it may take receivers up to 24 hours to refresh their cache and to see delivery resume.",
-          "links": ["https://www.spamhaus.org/lookup/"]
+          "links": [
+            "https://www.spamhaus.org/lookup/"
+          ]
         },
         {
           "status": "5.7.1-2",
           "response": "smtp;550 5.7.1 Unfortunately, messages from [x.xx.xx.xx] weren't sent. Please contact your Internet service provider since part of their network is on our block list (S3150). You can also refer your provider to http://mail.live.com/mail/troubleshooting.aspx#errors. [#.eop-nam02.prod.protection.outlook.com]",
           "severity": 3,
           "description": "This is Microsoft's way of throttling your sending IP, possibly related to IP reputation classification. It should automatically expire on its own and is generally caused by sending too much traffic too fast.",
-          "links": ["https://sendersupport.olc.protection.outlook.com/pm/troubleshooting.aspx"]
+          "links": [
+            "https://sendersupport.olc.protection.outlook.com/pm/troubleshooting.aspx"
+          ]
         },
         {
           "status": "5.4.1",
@@ -225,7 +267,9 @@
           "response": "smtp;550 5.7.1 No such user!",
           "severity": 0,
           "description": "The email was sent to a non-existing address.",
-          "links": ["https://yandex.com/support/mail/bounces/yandex.html"]
+          "links": [
+            "https://yandex.com/support/mail/bounces/yandex.html"
+          ]
         }
       ]
     },
@@ -238,21 +282,27 @@
           "response": "smtp;550 5.2.1 <EXAMPLE@PRODIGY.NET>... Addressee unknown, relay=[x.xx.xx.xx]",
           "severity": 0,
           "description": "",
-          "links": ["https://www.att.com/support/article/email-support/KM1401980/"]
+          "links": [
+            "https://www.att.com/support/article/email-support/KM1401980/"
+          ]
         },
         {
           "status": "5.2.1-2",
           "response": "smtp;550 5.2.1 <example@prodigy.net>... blank mailhost - invalid address, relay=[x.xx.xx.xx]",
           "severity": 0,
           "description": "",
-          "links": ["https://www.att.com/support/article/email-support/KM1401980/"]
+          "links": [
+            "https://www.att.com/support/article/email-support/KM1401980/"
+          ]
         },
         {
           "status": "5.7.1",
           "response": "smtp;550 5.7.1 Connections not accepted from servers without a valid sender domain. ## Fix reverse DNS for x.xx.xx.xx",
           "severity": 3,
           "description": "Usually this is a reverse DNS (PTR) issue with the sending IP, but sometimes lookup failures by AT&T can cause this bounce to be a false-positive. After confirming reverse DNS is properly set up and the record has fully propagated, try resending the message. ",
-          "links": ["https://www.att.com/support/article/email-support/KM1401980/"]
+          "links": [
+            "https://www.att.com/support/article/email-support/KM1401980/"
+          ]
         }
       ]
     },
@@ -265,7 +315,9 @@
           "response": "smtp;550 5.7.1 Email rejected per DMARC policy for zoho.com",
           "severity": 0,
           "description": "This is related to using a zoho.com address from an external service or app without the Zoho SMTP settings in those apps.",
-          "links": ["https://help.zoho.com/portal/en/community/topic/preventing-spam-emails-using-zoho-com-enforcing-spf-dkim-and-dmarc-for-zoho-com-accounts"]
+          "links": [
+            "https://help.zoho.com/portal/en/community/topic/preventing-spam-emails-using-zoho-com-enforcing-spf-dkim-and-dmarc-for-zoho-com-accounts"
+          ]
         },
         {
           "status": "5.1.1",
@@ -285,28 +337,36 @@
           "response": "smtp;550 spam detected",
           "severity": 2,
           "description": "Free.fr determined the message that you sent included spam content. Check your mail to make sure it should not be missdetected as a spam, either by using an antispam softwate or by checking if the mail is syntaxically correct.",
-          "links": ["https://postmaster.free.fr/index_en.html"]
+          "links": [
+            "https://postmaster.free.fr/index_en.html"
+          ]
         },
         {
           "status": "5.2.2",
           "response": "smtp;550 5.2.2 user quota exceeded",
           "severity": 0,
           "description": "",
-          "links": ["https://postmaster.free.fr/index_en.html"]
+          "links": [
+            "https://postmaster.free.fr/index_en.html"
+          ]
         },
         {
           "status": "5.2.1",
           "response": "smtp;550 5.2.1 This mailbox has been blocked due to inactivity",
           "severity": 1,
           "description": "The mailbox is not currently active because of inactivity from the recipient. Once the recipient reactivates their mailbox, they'll be able to receive messages again.",
-          "links": ["https://postmaster.free.fr/index_en.html"]
+          "links": [
+            "https://postmaster.free.fr/index_en.html"
+          ]
         },
         {
           "status": "2",
           "response": "smtp;550 virus detected",
           "severity": 4,
           "description": "Free.fr has detected a virus in the message that you sent. Check your mail to make sure it should not be missdetected as a spam, either by using an antispam softwate or by checking if the mail is syntaxically correct.",
-          "links": ["https://postmaster.free.fr/index_en.html"]
+          "links": [
+            "https://postmaster.free.fr/index_en.html"
+          ]
         }
       ]
     },
@@ -319,14 +379,18 @@
           "response": "smtp;550 Requested action not taken: mailbox unavailable",
           "severity": 0,
           "description": "The specified recipient does not exist on their systems or the recipient has not used their inbox for an extended period of time and the inbox has been temporarily disabled due to inactivity. Please check the spelling of the email address.",
-          "links": ["https://postmaster.gmx.net/en/error-messages"]
+          "links": [
+            "https://postmaster.gmx.net/en/error-messages"
+          ]
         },
         {
           "status": "2",
           "response": "Requested action not taken: mailbox unavailable Reject due to policy restrictions.",
           "severity": 0,
           "description": "The message is being rejected due to policy reasons. This is likely down to the sender or IP being a spam source, or technical information included in the email doesn't meet some RFC standards.",
-          "links": ["https://www.gmx.net/mail/senderguidelines/"]
+          "links": [
+            "https://www.gmx.net/mail/senderguidelines/"
+          ]
         }
       ]
     },
@@ -339,7 +403,9 @@
           "response": "smtp;550 5.1.1 Email address could not be found, or was misspelled (G8)",
           "severity": 0,
           "description": "Recipient address does not exist on our system",
-          "links": ["https://postmaster.apps.rackspace.com/system-info/response-codes"]
+          "links": [
+            "https://postmaster.apps.rackspace.com/system-info/response-codes"
+          ]
         }
       ]
     },
@@ -378,49 +444,63 @@
           "response": "smtp;550 Mail is rejected by recipients ",
           "severity": 0,
           "description": "You are on this recipient's personal blacklist or your message has been rejected because of a filter they've created.",
-          "links": ["https://service.exmail.qq.com/cgi-bin/help?id=20022&no=1001262&subtype=1"]
+          "links": [
+            "https://service.exmail.qq.com/cgi-bin/help?id=20022&no=1001262&subtype=1"
+          ]
         },
         {
           "status": "2",
           "response": "smtp;550 Mailbox unavailable or access denied",
           "severity": 0,
           "description": "The recipient you're trying to send to is receiving a large number of emails in a short period of time. To avoid malicious attacks, sending to this recipient is temporarily prohibited.",
-          "links": ["https://service.exmail.qq.com/cgi-bin/help?subtype=1&id=20022&no=1000742"]
+          "links": [
+            "https://service.exmail.qq.com/cgi-bin/help?subtype=1&id=20022&no=1000742"
+          ]
         },
         {
           "status": "3",
           "response": "smtp;550 Mailbox not found. http://service.exmail.qq.com/cgi-bin/help?subtype=1&&id=20022&&no=1000728",
           "severity": 0,
           "description": "This recipient does not exist.",
-          "links": ["https://service.exmail.qq.com/cgi-bin/help?subtype=1&&id=20022&&no=1000728"]
+          "links": [
+            "https://service.exmail.qq.com/cgi-bin/help?subtype=1&&id=20022&&no=1000728"
+          ]
         },
         {
           "status": "4",
           "response": "smtp;550 Mail content denied. http://service.exmail.qq.com/cgi-bin/help?subtype=1&&id=20022&&no=1000726",
           "severity": 0,
           "description": "The content of the email was suspected of being sent in large numbers and was reported by a lot of users as spam.",
-          "links": ["http://service.exmail.qq.com/cgi-bin/help?subtype=1&&id=20022&&no=1000726"]
+          "links": [
+            "http://service.exmail.qq.com/cgi-bin/help?subtype=1&&id=20022&&no=1000726"
+          ]
         },
         {
           "status": "5",
           "response": "smtp;550 Sender frequency limited. http://service.exmail.qq.com/cgi-bin/help?subtype=1&&id=20022&&no=1000723",
           "severity": 0,
           "description": "The sender 's sending frequency exceeded the limit. The amount of time that further mail is prohibited from being delivered depends on the limit exceeded. (for example, sender, hourly, daily). These limits are not disclosed.",
-          "links": ["http://service.exmail.qq.com/cgi-bin/help?subtype=1&&id=20022&&no=1000723"]
+          "links": [
+            "http://service.exmail.qq.com/cgi-bin/help?subtype=1&&id=20022&&no=1000723"
+          ]
         },
         {
           "status": "6",
           "response": "smtp;550 Suspected spam sender.",
           "severity": 3,
           "description": "Suspected of spam/a large amount of spam was sent from the domain name or mail operator.",
-          "links": ["https://service.mail.qq.com/cgi-bin/help?subtype=1&&id=20022&&no=1001461"]
+          "links": [
+            "https://service.mail.qq.com/cgi-bin/help?subtype=1&&id=20022&&no=1001461"
+          ]
         },
         {
           "status": "7",
           "response": "smtp;550 DMARC check failed http://service.mail.qq.com/cgi-bin/help?subtype=1&&no=1001508&&id=16.",
           "severity": 3,
           "description": "The sent message failed the DMARC policy for the sending domain. If the sending domain has a reject policy set for DMARC, the message must pass DKIM or have SPF aligned to the domain with a custom Return-Path. To resolve this, you'll need to contact your email service provider to see how to send a message that passes DMARC support. ",
-          "links": ["http://service.mail.qq.com/cgi-bin/help?subtype=1&&no=1001508&&id=16"]
+          "links": [
+            "http://service.mail.qq.com/cgi-bin/help?subtype=1&&no=1001508&&id=16"
+          ]
         }
       ]
     },
@@ -486,7 +566,9 @@
           "response": "smtp;550 mwinfXXXX ME Adresse IP source bloquee pour incident de spam. Client host blocked for spamming issues. OFR006_102 Ref http://csi.cloudmark.com/reset-request/?ip=xxx.xxx.xxx.xxx [102]",
           "severity": 3,
           "description": "Your IP has been blocked by Cloudmark Sender Intelligence and must be delisted to deliver mail.",
-          "links": ["http://csi.cloudmark.com/reset-request"]
+          "links": [
+            "http://csi.cloudmark.com/reset-request"
+          ]
         }
       ]
     },
@@ -499,70 +581,90 @@
           "response": "smtp;550 <example@example.com>: Reject due to SPF policy. The originating IP of the message is not permitted by the domain owner",
           "severity": 0,
           "description": "The email was rejected, because it was sent from a server that is not included in the domain owner's SPF record. This usually indicates that the sender address has been spoofed and that the email is spam/phishing.",
-          "links": ["https://postmaster.web.de/en/error-messages"]
+          "links": [
+            "https://postmaster.web.de/en/error-messages"
+          ]
         },
         {
           "status": "2",
           "response": "smtp;550 <example@example.com>: Syntax error in parameters or arguments",
           "severity": 0,
           "description": "Due to an incorrect configuration, email reception has been refused. Please contact your administrator who should correct the server configuration based on their recommendations.",
-          "links": ["https://postmaster.web.de/en/best-practice"]
+          "links": [
+            "https://postmaster.web.de/en/best-practice"
+          ]
         },
         {
           "status": "3",
           "response": "smtp;550 <example@example.com>: Requested action not taken: mailbox unavailable",
           "severity": 0,
           "description": "The specified recipient does not exist on their systems or the recipient has not used their inbox for an extended period of time and the inbox has been temporarily disabled due to inactivity.",
-          "links": ["https://postmaster.web.de/en/error-messages"]
+          "links": [
+            "https://postmaster.web.de/en/error-messages"
+          ]
         },
         {
           "status": "4",
           "response": "smtp;550 <example@example.com>: Bad DNS PTR resource record",
           "severity": 0,
           "description": "Emails from your email server were rejected because the PTR Resource Record of your IP address does not follow their guidelines. Possible reasons for this can be: The PTR-RR states that the IP address was dynamically allocated or the PTR-RR is a generic standard entry of your provider. Please allocate an independent and fully qualified domain name to your email server.",
-          "links": ["https://postmaster.web.de/en/error-messages"]
+          "links": [
+            "https://postmaster.web.de/en/error-messages"
+          ]
         },
         {
           "status": "5",
           "response": "smtp;550 <example@example.com>: Reject due to policy restrictions (header based)",
           "severity": 0,
           "description": "Your message will be rejected by their system if: any of the technical information included in the email doesn't meet the standards, the email violates their guidelines or, it is not plausible, i.e.: when specifying the date. This is applicable to all emails with more than one of the following headers: BCC, CC, Date, From, Sender, Subject, To. In addition, the headers \"Date, From, Sender, To\" must be syntactically correct.",
-          "links": ["https://postmaster.web.de/en/email-policy"]
+          "links": [
+            "https://postmaster.web.de/en/email-policy"
+          ]
         },
         {
           "status": "6",
           "response": "smtp;550 <example@example.com>: Reject due to policy restrictions (domain based)",
           "severity": 0,
           "description": "The email has been rejected due to their current security policy. This may occur if the sender domain is known as a spam domain.",
-          "links": ["https://postmaster.web.de/en/email-policy"]
+          "links": [
+            "https://postmaster.web.de/en/email-policy"
+          ]
         },
         {
           "status": "7",
           "response": "smtp;550 <example@example.com>: Reject due to policy restrictions (IP based)",
           "severity": 0,
           "description": "If a high percentage of e-mails are classified as spam by their filters, all messages coming from the sender's IP address will be temporarily rejected for a specific time frame.",
-          "links": ["https://postmaster.web.de/en/email-policy"]
+          "links": [
+            "https://postmaster.web.de/en/email-policy"
+          ]
         },
         {
           "status": "8",
           "response": "smtp;550 <example@example.com>: Requested mail action aborted: exceeded storage allocation, Quota exceeded",
           "severity": 0,
           "description": "The potential recipient does not have sufficient free space in their inbox",
-          "links": ["https://postmaster.web.de/en/error-messages"]
+          "links": [
+            "https://postmaster.web.de/en/error-messages"
+          ]
         },
         {
           "status": "9",
           "response": "smtp;550 <example@example.com>: IP address is block listed",
           "severity": 0,
           "description": "Your IP is in one of the block lists used by Web.de",
-          "links": ["https://postmaster.web.de/en/error-messages"]
+          "links": [
+            "https://postmaster.web.de/en/error-messages"
+          ]
         },
         {
           "status": "10",
           "response": "smtp;550 <example@example.com>: Invalid DNS MX or A/AAAA resource record",
           "severity": 0,
           "description": "Your domain does not have an MX record or an A record that can receive replies or bounces, or the MX record is not resolvable.",
-          "links": ["https://postmaster.web.de/en/error-messages"]
+          "links": [
+            "https://postmaster.web.de/en/error-messages"
+          ]
         }
       ]
     }
@@ -584,7 +686,9 @@
           "response": "smtp;550 Rejected by header based Anti-Spoofing policy: email@example.com - https://community.mimecast.com/docs/DOC-1369#550 [#]",
           "severity": 0,
           "description": "Often this bounce is related to sending both 'To' and 'From' the same domain but through a third party (like an ESP).",
-          "links": ["https://community.mimecast.com/s/article/Configuring-Anti-Spoofing-Policies-1695615136"]
+          "links": [
+            "https://community.mimecast.com/s/article/Configuring-Anti-Spoofing-Policies-1695615136"
+          ]
         },
         {
           "status": "3",
@@ -598,14 +702,18 @@
           "response": "smtp;550 Envelope blocked - User Entry - https://community.mimecast.com/docs/DOC-1369#550 [#]",
           "severity": 0,
           "description": "This is not a global block for all Mimecast customers. Instead just this single recipient domain's administrator has blocked your mail.",
-          "links": ["https://community.mimecast.com/s/article/Mimecast-SMTP-Error-Codes-842605754"]
+          "links": [
+            "https://community.mimecast.com/s/article/Mimecast-SMTP-Error-Codes-842605754"
+          ]
         },
         {
           "status": "5",
           "response": "smtp;550 DMARC Sender Invalid - envelope rejected - https://community.mimecast.com/docs/DOC-1369#550 [#]",
           "severity": 3,
           "description": "The inbound message has been rejected because the sending IP address isn't listed in the published SPF records for the sending domain (Return-Path header domain). Ensure all the IP address for your mail servers are listed in your SPF records.",
-          "links": ["https://community.mimecast.com/s/article/Mimecast-SMTP-Error-Codes-842605754"]
+          "links": [
+            "https://community.mimecast.com/s/article/Mimecast-SMTP-Error-Codes-842605754"
+          ]
         }
       ]
     },
@@ -674,14 +782,18 @@
           "response": "smtp;550 5.7.1 <email@example.com>: Recipient address rejected: User email address is marked as invalid.",
           "severity": 0,
           "description": "",
-          "links": ["https://help.proofpoint.com/Proofpoint_Essentials/Email_Security/Administrator_Topics/110_logs/Common_Error_Codes_found_in_Message_Details"]
+          "links": [
+            "https://help.proofpoint.com/Proofpoint_Essentials/Email_Security/Administrator_Topics/110_logs/Common_Error_Codes_found_in_Message_Details"
+          ]
         },
         {
           "status": "5.7.1-2",
           "response": "smtp;550 5.7.1 Relaying denied",
           "severity": 0,
           "description": "Recipient is not a Proofpoint customer or you are not allowed to use Proofpoint as an SMTP relay.",
-          "links": ["https://help.proofpoint.com/Proofpoint_Essentials/Email_Security/Administrator_Topics/110_logs/Common_Error_Codes_found_in_Message_Details"]
+          "links": [
+            "https://help.proofpoint.com/Proofpoint_Essentials/Email_Security/Administrator_Topics/110_logs/Common_Error_Codes_found_in_Message_Details"
+          ]
         },
         {
           "status": "5.7.1-5",
@@ -695,14 +807,18 @@
           "response": "smtp;550 5.7.1 Service unavailable; client [x.xx.xx.xx] blocked using prs.proofpoint.com",
           "severity": 3,
           "description": "Your IP has been blocked by Proofpoint Dynamic Reputation and must be delisted to deliver mail.",
-          "links": ["https://ipcheck.proofpoint.com"]
+          "links": [
+            "https://ipcheck.proofpoint.com"
+          ]
         },
         {
           "status": "5.7.1-4",
           "response": "smtp;550 5.7.1 Service unavailable; client [x.xx.xx.xx] blocked using Cloudmark Sender Intelligence (Visit http://csi.cloudmark.com/reset-request/ if you feel this is in error)",
           "severity": 3,
           "description": "Your IP has been blocked by Cloudmark Sender Intelligence and must be delisted to deliver mail.",
-          "links": ["http://csi.cloudmark.com/reset-request/"]
+          "links": [
+            "http://csi.cloudmark.com/reset-request/"
+          ]
         }
       ]
     },
@@ -715,28 +831,97 @@
           "response": "smtp;550 5.4.1 [email@example.com]: Recipient address rejected: Access denied [example.com]",
           "severity": 0,
           "description": "Usually this bounce means the recipient address is invalid, but sometimes it can be caused by internal setup or routing issues. Reach out to the recipient's mail admin to verify.",
-          "links": ["https://support.microsoft.com/en-us/topic/ndr-error-code-550-5-4-1-recipient-address-rejected-access-denied-c0e98a8e-81db-49c2-9bf1-32a1734d3e77"]
+          "links": [
+            "https://support.microsoft.com/en-us/topic/ndr-error-code-550-5-4-1-recipient-address-rejected-access-denied-c0e98a8e-81db-49c2-9bf1-32a1734d3e77"
+          ]
         },
         {
           "status": "5.7.1",
           "response": "smtp;550 5.7.1 Service unavailable, Client host [x.xx.xx.xx] blocked using Spamhaus. To request removal from this list see https://www.spamhaus.org/query/ip/0.0.0.0 (AS16012611)",
           "severity": 4,
           "description": "Exchange Online checks the sending IP against the public block list Spamhaus. Spamhaus is a very reputable block list with few false-positive listings. You must cooperate with Spamhaus volunteers to resolve the listing. Remember that even once the listing is removed, it may take receivers up to 24 hours to refresh their cache and to see delivery resume.",
-          "links": ["https://www.spamhaus.org/lookup/"]
+          "links": [
+            "https://www.spamhaus.org/lookup/"
+          ]
         },
         {
           "status": "5.7.1-2",
           "response": "550 5.7.1 Service unavailable, Helo domain is listed in Spamhaus. To request removal from this list see https://www.spamhaus.org/query/lookup/ (S8001) [#.prod.protection.outlook.com]",
           "severity": 4,
           "description": "First, the forward DNS lookup (domain name to IP address) of your sending IP should match the HELO value set in your mailserver. Then Exchange Online checks this HELO domain against the public block list Spamhaus. Spamhaus is a very reputable block list with few false-positive listings. You must cooperate with Spamhaus volunteers to resolve the listing. Remember that even once the listing is removed, it may take receivers up to 24 hours to refresh their cache and to see delivery resume. ",
-          "links": ["https://www.spamhaus.org/lookup/"]
+          "links": [
+            "https://www.spamhaus.org/lookup/"
+          ]
         },
         {
           "status": "5.7.606",
           "response": "smtp;550 5.7.606 Access denied, banned sending IP [x.xx.xx.xx]. To request removal from this list please visit https://sender.office.com/ and follow the directions. For more information please go to  http://go.microsoft.com/fwlink/?LinkID=526655 (AS16012609)",
           "severity": 4,
           "description": "",
-          "links": ["https://sender.office.com/"]
+          "links": [
+            "https://sender.office.com/"
+          ]
+        },
+        {
+          "status": "5.7.1-3",
+          "response": "smtp;550 5.7.1 TRANSPORT.RULES.RejectMessage; the message was rejected by organization policy",
+          "severity": 2,
+          "description": "A Microsoft 365 / Exchange Online mail flow rule (transport rule) in the recipient organization is configured to reject this message. This is an admin-defined policy at the receiving end \u2014 there is typically nothing the sender can do except contact the recipient through another channel.",
+          "links": [
+            "https://learn.microsoft.com/en-us/exchange/security-and-compliance/mail-flow-rules/mail-flow-rules"
+          ]
+        },
+        {
+          "status": "5.7.133",
+          "response": "smtp;550 5.7.133 RESOLVER.RST.SenderNotAuthenticatedForGroup; authentication required; Delivery restriction check failed because the sender was not authenticated when sending to this group",
+          "severity": 2,
+          "description": "The recipient is a Microsoft 365 distribution group or mail-enabled security group configured to reject external or unauthenticated senders. Only members or explicitly approved senders can deliver to this group.",
+          "links": [
+            "https://learn.microsoft.com/en-us/microsoft-365/solutions/allow-members-to-send-as-or-send-on-behalf-of-group"
+          ]
+        },
+        {
+          "status": "5.7.520",
+          "response": "smtp;550 5.7.520 Access denied, Your organization does not allow external forwarding. Please contact your administrator for further assistance. AS(7555)",
+          "severity": 1,
+          "description": "The recipient's Microsoft 365 organization has disabled automatic external email forwarding (AS7555). Microsoft enforces this by default to prevent data exfiltration and spam relaying. The forwarding rule on the recipient's side is the cause \u2014 senders cannot work around this.",
+          "links": [
+            "https://learn.microsoft.com/en-us/microsoft-365/security/office-365-security/outbound-spam-policies-external-email-forwarding"
+          ]
+        },
+        {
+          "status": "5.7.129",
+          "response": "smtp;550 5.7.129 RESOLVER.RST.RestrictedToRecipientsPermission; not authorized to send to recipient because the sender isn't on the recipient's list of senders to accept mail from",
+          "severity": 1,
+          "description": "The recipient's Exchange Online mailbox is configured with a restricted sender list (safe senders / accepted senders only). Messages from addresses not on that list are rejected at delivery.",
+          "links": [
+            "https://learn.microsoft.com/en-us/exchange/mail-flow/mail-routing/recipient-resolution"
+          ]
+        },
+        {
+          "status": "5.7.134",
+          "response": "smtp;550 5.7.134 RESOLVER.RST.SenderNotAuthenticatedForMailbox; authentication required; Delivery restriction check failed because the sender was not authenticated when sending to this mailbox",
+          "severity": 2,
+          "description": "The recipient's Exchange Online mailbox requires authenticated senders. External unauthenticated senders are rejected. This is typically a per-mailbox restriction set by the organization's admin.",
+          "links": [
+            "https://learn.microsoft.com/en-us/exchange/mail-flow/mail-routing/recipient-resolution"
+          ]
+        },
+        {
+          "status": "5.1.10",
+          "response": "smtp;550 5.1.10 RESOLVER.ADR.RecipientNotFound; Recipient not found by SMTP address lookup",
+          "severity": 0,
+          "description": "The specified recipient address does not exist in the Microsoft 365 / Exchange Online directory. Remove this address from your sending list.",
+          "links": []
+        },
+        {
+          "status": "5.2.3",
+          "response": "smtp;550 5.2.3 RESOLVER.RST.RecipSizeLimit; message too large for this recipient",
+          "severity": 0,
+          "description": "The message exceeds the maximum size configured for this specific Exchange Online recipient. Reduce the message size or remove large attachments.",
+          "links": [
+            "https://learn.microsoft.com/en-us/exchange/mail-flow/message-size-limits"
+          ]
         }
       ]
     },
@@ -763,7 +948,9 @@
           "response": "smtp;550 Blocked",
           "severity": 0,
           "description": "Barracuda states that a 550 SMTP code means that the requested command failed because the user's mailbox was unavailable (for example, because it was not found, or because the command was rejected for policy reasons).",
-          "links": ["https://campus.barracuda.com/product/emailsecuritygateway/doc/39815000/smtp-error-codes/"]
+          "links": [
+            "https://campus.barracuda.com/product/emailsecuritygateway/doc/39815000/smtp-error-codes/"
+          ]
         },
         {
           "status": "4",
@@ -777,7 +964,9 @@
           "response": "smtp;550 permanent failure for one or more recipients (email@example.com:blocked)",
           "severity": 0,
           "description": "This specific message is being blocked for content or domain related reasons. It's not necessarily a permanent failure since a different message may deliver later.",
-          "links": ["https://campus.barracuda.com/product/emailsecuritygateway/knowledgebase/50160000000GWZ9AAO/My+emails+to+recipients+with+a+Barracuda+Spam+Firewall+keep+getting+blocked!+What+do+I+do/"]
+          "links": [
+            "https://campus.barracuda.com/product/emailsecuritygateway/knowledgebase/50160000000GWZ9AAO/My+emails+to+recipients+with+a+Barracuda+Spam+Firewall+keep+getting+blocked!+What+do+I+do/"
+          ]
         }
       ]
     },
@@ -803,7 +992,9 @@
           "response": "smtp;550 5.7.1 <example@example.com>: Recipient address rejected: ERS-Customized-Block.",
           "severity": 0,
           "description": "'ERS' stands for Trend Micro's 'Email Reputation System', which provides custom levels of threat protection including sensitivity preferences and custom filters.",
-          "links": ["https://success.trendmicro.com/solution/TP000087438-How-do-I-edit-Reputation-Settings"]
+          "links": [
+            "https://success.trendmicro.com/solution/TP000087438-How-do-I-edit-Reputation-Settings"
+          ]
         }
       ]
     },
